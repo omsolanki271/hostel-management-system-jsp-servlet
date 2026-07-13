@@ -79,9 +79,3 @@ This project is currently under active development. New modules and improvements
 **Om Solanki**
 
 Aspiring Java Backend Developer
-
-📧 Email: omsolanki271@gmail.com
-
-🔗 LinkedIn: https://linkedin.com/in/omsolanki-java-developer
-
-💻 GitHub: https://github.com/omsolanki271
