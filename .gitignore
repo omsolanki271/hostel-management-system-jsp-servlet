@@ -76,3 +76,4 @@ node_modules/
 # Ignore runtime uploaded complaint files
 src/main/webapp/uploads/complaints/*
 !src/main/webapp/uploads/complaints/.gitkeep
+*.sql
