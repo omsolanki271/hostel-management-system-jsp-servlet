@@ -1,0 +1,147 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f7f7;
+    color: #333;
+}
+
+/* HEADER */
+.admin-header {
+    height: 60px;
+    background: #ffffff;
+    border-bottom: 2px solid #f97316;
+    padding: 0 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 2000;
+}
+
+#toggleSidebar {
+    margin-right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.admin-logo {
+    font-size: 20px;
+    color: #f97316;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.brand-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+/* PROFILE */
+.admin-profile {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.admin-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid #f97316;
+    margin-right: 8px;
+}
+
+.admin-menu {
+    position: absolute;
+    right: 0;
+    top: 55px;
+    background: #fff;
+    width: 180px;
+    border-radius: 6px;
+    display: none;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.admin-menu.open {
+    display: block;
+}
+
+.admin-menu li a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+.admin-menu li a:hover {
+    background: #f97316;
+    color: #fff;
+}
+
+/* SIDEBAR */
+.admin-sidebar {
+    width: 230px;
+    background: #ffffff;
+    border-right: 2px solid #f97316;
+    position: fixed;
+    top: 60px;
+    height: 100%;
+    overflow-y: auto;
+    padding-top: 15px;
+}
+
+.sidebar-title {
+    padding: 10px 20px;
+    color: #888;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.sidebar-menu li a {
+    display: block;
+    padding: 12px 20px;
+    color: #444;
+    text-decoration: none;
+}
+
+.sidebar-menu li a:hover {
+    background: #f97316;
+    color: #fff;
+}
+
+.submenu {
+    display: none;
+    background: #fafafa;
+    border-left: 3px solid #f97316;
+}
+
+.submenu.open { display: block; }
+.drop-icon.rotate { transform: rotate(90deg); }
+
+/* MAIN CONTENT */
+.admin-content {
+    margin-left: 230px;
+    padding: 20px;
+    margin-top: 70px;
+}
+
+/* FOOTER */
+.admin-footer {
+    margin-left: 230px;
+    padding: 15px;
+    text-align: center;
+    color: #555;
+}

@@ -1,0 +1,80 @@
+/* LOGIN PAGE BEAUTIFUL UI */
+.login-body {
+  background: #fff7ed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.login-box {
+  background: #fff;
+  padding: 40px 35px;
+  border-radius: 14px;
+  width: 380px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+  position: relative; /* IMPORTANT */
+}
+
+.login-title {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.7rem;
+  color: #f97316;
+  font-weight: 800;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+.full-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  background: #f97316;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.full-btn:hover {
+  background: #ea580c;
+}
+
+/* BACK BUTTON INSIDE LOGIN BOX */
+.back-inside {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  font-size: 0.9rem;
+  color: #f97316;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.back-inside i {
+  margin-right: 5px;
+}
+
+.back-inside:hover {
+  text-decoration: underline;
+}

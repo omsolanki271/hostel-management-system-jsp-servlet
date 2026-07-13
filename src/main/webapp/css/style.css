@@ -1,0 +1,506 @@
+/* =========================================================
+   COLOR SYSTEM
+========================================================= */
+:root {
+    --primary: #F97316;
+    --primary-hover: #EA580C;
+    --yellow: #FACC15;
+    --navy: #0F172A;
+    --muted: #475569;
+    --cream: #FFF7ED;
+    --white: #ffffff;
+
+    /* Animation extras */
+    --shadow-soft: 0 6px 20px rgba(0,0,0,0.08);
+    --shadow-lift: 0 14px 30px rgba(0,0,0,0.12);
+}
+
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", "Segoe UI", sans-serif;
+    background: var(--cream);
+    color: var(--navy);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* =========================================================
+   ANIMATION: REVEAL ON SCROLL
+========================================================= */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all .9s cubic-bezier(.2, .9, .2, 1);
+}
+
+.reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+.navbar {
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(8px);
+    padding: 14px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: .3s;
+    box-shadow: var(--shadow-soft);
+}
+
+.navbar.scrolled {
+    box-shadow: var(--shadow-lift);
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 6px 16px rgba(249,115,22,0.15);
+}
+
+.brand-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-name {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+/* Navbar Links */
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 6px;
+    color: var(--navy);
+    transition: .3s;
+}
+
+.nav-links a::after {
+    content: "";
+    width: 0;
+    height: 3px;
+    background: var(--primary);
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    border-radius: 4px;
+    transition: .3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Auth buttons */
+.auth-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    box-shadow: var(--shadow-soft);
+    transition: .25s;
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lift);
+}
+
+.btn-secondary {
+    border: 2px solid var(--primary);
+    padding: 7px 18px;
+    border-radius: 10px;
+    color: var(--primary);
+    font-weight: 600;
+    transition: .25s;
+}
+
+.btn-secondary:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* Mobile Menu */
+.menu-toggle {
+    display: none;
+    background: none;
+    font-size: 1.8rem;
+    border: none;
+    cursor: pointer;
+}
+
+/* Responsive navbar */
+@media (max-width: 900px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        right: 20px;
+        top: 75px;
+        padding: 20px;
+        border-radius: 12px;
+        flex-direction: column;
+        background: #fff;
+        box-shadow: var(--shadow-lift);
+        width: 230px;
+    }
+    .nav-links.open {
+        display: flex;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    .auth-buttons {
+        display: none;
+    }
+}
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+.hero {
+    position: relative;
+    height: 520px;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    transform: scale(1.1);
+    transition: transform 9s ease;
+}
+
+.hero:hover .hero-image img {
+    transform: scale(1.02);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,rgba(0,0,0,0.6),rgba(0,0,0,0.2));
+}
+
+/* Hero text animations */
+.hero-content h1 {
+    opacity: 0;
+    animation: fadeUp 1s ease forwards .2s;
+}
+
+.hero-content p {
+    opacity: 0;
+    animation: fadeUp 1s ease forwards .4s;
+}
+
+.hero-buttons {
+    opacity: 0;
+    animation: fadeUp 1s ease forwards .6s;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Floating lights in hero */
+.hero::before {
+    content: "";
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle, rgba(249,115,22,0.4), transparent);
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    filter: blur(40px);
+    animation: float 6s infinite alternate ease-in-out;
+}
+
+@keyframes float {
+    from { transform: translateY(0); }
+    to   { transform: translateY(-25px); }
+}
+
+/* =========================================================
+   ABOUT SECTION
+========================================================= */
+.about {
+    padding: 80px 0;
+}
+
+.about-flex {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.about-image img {
+    border-radius: 12px;
+    box-shadow: var(--shadow-lift);
+    transition: .35s;
+}
+
+.about-image img:hover {
+    transform: scale(1.02);
+}
+
+.about-points .point {
+    background: white;
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    box-shadow: var(--shadow-soft);
+    transition: .35s;
+}
+
+.point:hover {
+    transform: translateX(6px);
+}
+
+/* Responsive */
+@media (max-width:768px) {
+    .about-flex { flex-direction: column; text-align:center; }
+    .about-points { grid-template-columns: 1fr !important; }
+}
+
+/* =========================================================
+   FACILITIES SECTION
+========================================================= */
+.facilities {
+    padding: 70px 0;
+}
+
+.facilities-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 22px;
+}
+
+.facility {
+    background: white;
+    padding: 22px;
+    border-radius: 14px;
+    box-shadow: var(--shadow-soft);
+    text-align: center;
+    transition: .35s;
+}
+
+.facility:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lift);
+}
+
+/* =========================================================
+   ROOM CARDS (ZOOM EFFECT)
+========================================================= */
+.room-card {
+    border-radius: 12px;
+    overflow: hidden;
+    background: white;
+    box-shadow: var(--shadow-soft);
+    transition: .35s;
+}
+
+.room-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lift);
+}
+
+.room-card img {
+    height: 220px;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.room-card:hover img {
+    transform: scale(1.07);
+}
+
+/* =========================================================
+   GALLERY
+========================================================= */
+.gallery-item {
+    height: 170px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: .4s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.08);
+    filter: brightness(.9);
+}
+
+/* =========================================================
+   COUNTER STATS
+========================================================= */
+.stat-box {
+    background: white;
+    padding: 28px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    transition: .35s;
+}
+
+.stat-box:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lift);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    transition: .5s;
+}
+
+/* =========================================================
+   FEATURES
+========================================================= */
+.feature-card {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-soft);
+    transition: .35s;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lift);
+}
+
+/* =========================================================
+   HOW IT WORKS
+========================================================= */
+.how-card {
+    padding: 40px 25px;
+    background: white;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    transition: .35s;
+}
+
+.how-card:hover {
+    transform: translateY(-10px);
+}
+
+/* =========================================================
+   TESTIMONIALS + SLIDER
+========================================================= */
+.testimonials-grid {
+    position: relative;
+    height: 330px;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: var(--shadow-soft);
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: .7s ease;
+}
+
+.testimonial-card.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+.premium-footer {
+    background: var(--navy);
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 40px;
+}
+
+.social-links i {
+    font-size: 1.3rem;
+    margin-right: 12px;
+    color: var(--primary);
+    transition: .3s;
+}
+
+.social-links i:hover {
+    color: var(--yellow);
+}
+
+/* =========================================================
+   RESPONSIVE GRID CHANGES
+========================================================= */
+@media (max-width: 950px) {
+    .rooms-grid,
+    .gallery-grid,
+    .facilities-grid,
+    .stats-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .features-grid,
+    .how-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,118 @@
+.leave-container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.leave-box {
+    width: 480px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    margin: 0 auto;
+}
+
+.leave-title {
+    color: #F97316;
+    font-weight: 800;
+    margin-bottom: 5px;
+    font-size: 28px;
+}
+
+.leave-sub {
+    color: #475569;
+    margin-bottom: 15px;
+}
+
+.leave-box input,
+.leave-box textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.back-btn {
+    color: #F97316;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 12px;
+    text-decoration: none;
+}
+
+.full-btn {
+    width: 100%;
+    padding: 12px;
+    font-weight: 700;
+    border-radius: 8px;
+    background: #F97316;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.full-btn:hover {
+    background: #EA580C;
+}
+
+.leave-table-wrapper {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.leave-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+.leave-table th {
+    background: #F97316;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+}
+
+.leave-table td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.leave-table tr:hover {
+    background: #FFF7ED;
+}
+
+/* Status Colors */
+.status-badge {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.status-badge.approved {
+    background: #4ade80;
+    color: #064e3b;
+}
+
+.status-badge.rejected {
+    background: #f87171;
+    color: #7f1d1d;
+}
+
+.status-badge.pending {
+    background: #fde047;
+    color: #854d0e;
+}
+
+.no-leave {
+    font-size: 18px;
+    padding: 15px;
+    background: #fff8e1;
+    border-left: 5px solid #F97316;
+}
